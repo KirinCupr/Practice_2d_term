@@ -1,18 +1,10 @@
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <Windows.h>
 
+#include <Windows.h>
+#include "Employer.h"
 using namespace std;
 
-struct Employer
-{
-    string title;
-    string activityType;
-    string address;
-    string phoneNumber;
-    bool onOpenVacancy;
-};
 
 /*struct Worker
 {
@@ -23,9 +15,9 @@ struct Employer
 };*/
 
 
-Employer GetEmloyerInfo();
-void WriteEmloyerInfo(Employer _employer);
-void PrintEmloyerInfo();
+Employer getEmloyerInfo();
+void writeEmloyerInfo(Employer _employer);
+void printEmloyerInfo();
 int main()
 {
     cout << "Hello! Select, who you are:"
@@ -43,9 +35,9 @@ int main()
     {
     case 1:
         cout << "\nIn case 1: ";
-        temp = GetEmloyerInfo();
-        WriteEmloyerInfo(temp);
-        PrintEmloyerInfo();
+        temp = getEmloyerInfo();
+        writeEmloyerInfo(temp);
+        printEmloyerInfo();
         /* launch of employer script */
         break;
 
@@ -61,7 +53,7 @@ int main()
     return 0;
 }
 
-Employer GetEmloyerInfo()
+Employer getEmloyerInfo()
 {
     Employer _employer;
 
@@ -89,7 +81,7 @@ Employer GetEmloyerInfo()
     return _employer;
 }
 
-void WriteEmloyerInfo(Employer _employer)
+void writeEmloyerInfo(Employer _employer)
 {
     ofstream inputTo("employersList.txt", ios::app | ios::in);
     if (!inputTo.is_open()) cout << "Error! There are something wrong with file";
@@ -99,7 +91,7 @@ void WriteEmloyerInfo(Employer _employer)
     inputTo.close();
 }
 
-void PrintEmloyerInfo()
+void printEmloyerInfo()
 {
     Employer _employer; //
     ifstream outputFrom ("employersList.txt", ios::out);
