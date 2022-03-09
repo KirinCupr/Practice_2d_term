@@ -6,16 +6,6 @@
 #include "Employee.h"
 using namespace std;
 
-
-/*struct Worker
-{
-    string lastname;
-    string name;
-    string patronymic;
-    string levelQualification;
-};*/
-
-
 Employer getEmployerInfo();
 void writeEmployerInfo(Employer _employer);
 void printEmployerInfo();
@@ -23,6 +13,7 @@ void printEmployerInfo();
 Employee getEmployeeInfo();
 void writeEmployeeInfo(Employee _employee);
 void printEmployeeInfo();
+
 int main()
 {
     cout << "Hello! Select, who you are:"
@@ -124,7 +115,7 @@ void printEmployerInfo()
 Employee getEmployeeInfo()
 {
     Employee _employee;
-    
+
     cout << "\n||___Employer____||\n\nWelcome, potential worker!\nPlease add the required information to complete your form:\n\n";
     cout << "1. Enter your surname: ";
     getline(cin, _employee.surname);
@@ -141,7 +132,7 @@ Employee getEmployeeInfo()
     return _employee;
 }
 
-void writeEmloyeeInfo(Employee _employee)
+void writeEmployeeInfo(Employee _employee)
 {
     ofstream inputTo("employeesList.txt", ios::app | ios::in);
     if (!inputTo.is_open()) cout << "Error! There are something wrong with file";
@@ -151,7 +142,7 @@ void writeEmloyeeInfo(Employee _employee)
     inputTo.close();
 }
 
-void printEmloyeeInfo()
+void printEmployeeInfo()
 {
     Employee _employee; //
     ifstream outputFrom("employeesList.txt", ios::out);
