@@ -16,6 +16,8 @@ void printEmployeeInfo();
 
 int main()
 {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     cout << "Hello! Select, who you are:"
         "\n1.Employer"
         "\n2.Worker"
@@ -78,6 +80,7 @@ Employer getEmployerInfo()
     cin >> _employer.onOpenVacancy; cout << endl;
 
     cout << "Thank You for using our product!\nThe manager has already started searching for suitable candidates\n";
+    system("pause");
 
     return _employer;
 }
@@ -128,6 +131,7 @@ Employee getEmployeeInfo()
     cout << "\n5. Enter the profession you are looking for: ";
     getline(cin, _employee.profession);
     cout << "\n\nThank you for your time! The manager is going to be assigned to your form. We'll contact you once we find a suitable vacancy.\n\n";
+    system("pause");
 
     return _employee;
 }
