@@ -119,18 +119,18 @@ Employee getEmployeeInfo()
 {
     Employee _employee;
 
-    cout << "\n||___Employer____||\n\nWelcome, potential worker!\nPlease add the required information to complete your form:\n\n";
-    cout << "1. Enter your surname: ";
+    cout << "\n||___Соискатель____||\n\nДобро пожаловать, потенциальный сотрудник!\nПожалуйста, введите необходимые данные для заполнения анкеты:\n\n";
+    cout << "1. Ваша фамилия: ";
     getline(cin, _employee.surname);
-    cout << "\n2. Enter your name: ";
+    cout << "\n2. Ваше имя: ";
     getline(cin, _employee.name);
-    cout << "\n3. Enter your patronymic: ";
+    cout << "\n3. Ваше отчество: ";
     getline(cin, _employee.patronymic);
-    cout << "\n4. Enter your qualification level: ";
+    cout << "\n4. Ваша квалификация: ";
     getline(cin, _employee.qualificationLevel);
-    cout << "\n5. Enter the profession you are looking for: ";
+    cout << "\n5. Желаемая должность: ";
     getline(cin, _employee.profession);
-    cout << "\n\nThank you for your time! The manager is going to be assigned to your form. We'll contact you once we find a suitable vacancy.\n\n";
+    cout << "\n\nСпасибо за ваше время! Менеджер скоро просмотрит вашу анкету. Мы сообщим вам, если появится подходящая вакансия.\n\n";
     system("pause");
 
     return _employee;
