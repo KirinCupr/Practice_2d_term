@@ -16,9 +16,10 @@ using namespace std;
 };*/
 
 
-Employer getEmloyerInfo();
-void writeEmloyerInfo(Employer _employer);
-void printEmloyerInfo();
+Employer getEmployerInfo();
+void writeEmployerInfo(Employer _employer);
+void printEmployerInfo();
+
 Employee getEmployeeInfo();
 void writeEmployeeInfo(Employee _employee);
 void printEmployeeInfo();
@@ -41,9 +42,9 @@ int main()
     {
     case 1:
         cout << "\nIn case 1: ";
-        temp = getEmloyerInfo();
-        writeEmloyerInfo(temp);
-        printEmloyerInfo();
+        temp = getEmployerInfo();
+        writeEmployerInfo(temp);
+        printEmployerInfo();
         /* launch of employer script */
         break;
 
@@ -62,7 +63,7 @@ int main()
     return 0;
 }
 
-Employer getEmloyerInfo()
+Employer getEmployerInfo()
 {
     Employer _employer;
 
@@ -90,7 +91,7 @@ Employer getEmloyerInfo()
     return _employer;
 }
 
-void writeEmloyerInfo(Employer _employer)
+void writeEmployerInfo(Employer _employer)
 {
     ofstream inputTo("employersList.txt", ios::app | ios::in);
     if (!inputTo.is_open()) cout << "Error! There are something wrong with file";
@@ -100,7 +101,7 @@ void writeEmloyerInfo(Employer _employer)
     inputTo.close();
 }
 
-void printEmloyerInfo()
+void printEmployerInfo()
 {
     Employer _employer; //
     ifstream outputFrom("employersList.txt", ios::out);
