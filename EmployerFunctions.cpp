@@ -22,10 +22,10 @@ Employer getEmployerInfo()
     cout << "\n4. Phone number of Your organization: ";
     getline(cin, _employer.phoneNumber); cout << endl;
 
-    cout << "\n\nDo you confirm the opening of a vacancy(Yes = 1, No = 0): ";
-    cin >> _employer.onOpenVacancy; cout << endl;
+    cout << "\n5. Enter name of open vacancy: ";
+    cin >> _employer.vacancy; cout << endl;
 
-    cout << "Thank You for using our product!\nThe manager has already started searching for suitable candidates\n";
+    cout << "\nThank You for using our product!\nThe manager has already started searching for suitable candidates\n";
     system("pause");
 
     return _employer;
@@ -33,29 +33,34 @@ Employer getEmployerInfo()
 
 void writeEmployerInfo(Employer _employer)
 {
-    ofstream inputTo("employersList.txt", ios::app | ios::in);
+    ofstream inputTo("employersList.txt", ios::out | ios::binary | ios::app);
     if (!inputTo.is_open()) cout << "Error! There are something wrong with file";
 
-    inputTo.write((char*)&_employer, sizeof(_employer));
+    inputTo << _employer.title << '\t' << _employer.activityType << '\t'
+            << _employer.address << '\t' << _employer.phoneNumber << '\t'
+            << _employer.vacancy << endl;
 
     inputTo.close();
 }
 
 void printEmployerInfo()
 {
-    Employer _employer; //
-    ifstream outputFrom("employersList.txt", ios::out);
+    Employer _employer;
+    ifstream outputFrom("employersList.txt", ios::in | ios::binary);
     if (!outputFrom.is_open()) cout << "Error! There are something wrong with file";
 
     outputFrom.seekg(0, ios_base::beg);
 
-    while (outputFrom.read((char*)&_employer, sizeof(_employer)))
+    while (!outputFrom.eof())
     {
-        cout << _employer.title << endl
-            << _employer.activityType << endl
-            << _employer.address << endl
-            << _employer.phoneNumber << endl
-            << _employer.onOpenVacancy << "\n\n";
+        getline (outputFrom, _employer.title, '\t');
+        getline (outputFrom, _employer.activityType, '\t');
+        getline (outputFrom, _employer.address, '\t');
+        getline (outputFrom, _employer.phoneNumber, '\t');
+        getline (outputFrom, _employer.vacancy, '\n');
+        cout << _employer.title << '\t' << _employer.activityType << '\t'
+             << _employer.address << '\t' << _employer.phoneNumber << '\t'
+             << _employer.vacancy << endl;
     }
     outputFrom.close();
     cout << endl;

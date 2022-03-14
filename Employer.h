@@ -9,7 +9,7 @@ struct Employer
     string activityType;
     string address;
     string phoneNumber;
-    bool onOpenVacancy;
+    string vacancy;
 };
 
 #endif // EMPLOYER_H
