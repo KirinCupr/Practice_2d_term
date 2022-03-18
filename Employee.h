@@ -12,4 +12,4 @@ struct Employee
     string profession;
 };
 
-#endif // EMPLOYEE_H
+#endif //EMPLOYEE_H

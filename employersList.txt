@@ -1,2 +1,9 @@
 Bank of Russia	Finance and buisness	Russia, Moscow	89007779999	Manager
 Chelyabinsk's machinebuilding factory	heavy industry	Chelyabensk, st. Moscovskaya, build. 4	89004567887	Engineer
+Apple	Software development	USA	566556	Middle
+Apple	Software development	USA	565656	Engineer
+BMV	carproduction	Europe	231347	High
+Hundai	Automotive	South Korea	363656	Middle engineer
+	world security	Earth	6664236	High leader
+UUUU	UUU	UUUUUU	555555555	NNNNN
+LLLL	LLLL	LLLL	LLLL	LLLL

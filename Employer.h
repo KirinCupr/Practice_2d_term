@@ -12,4 +12,4 @@ struct Employer
     string vacancy;
 };
 
-#endif // EMPLOYER_H
+#endif //EMPLOYER_H
