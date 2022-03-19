@@ -7,7 +7,6 @@
 // g++ -o main.exe main.cpp EmployerFunctions.cpp EmployerFunctions.h Employer.h Employee.h
 using namespace std;
 
-
 Employee getEmployeeInfo();
 void writeEmployeeInfo(Employee _employee);
 void printEmployeeInfo();
@@ -22,8 +21,6 @@ int main()
         "\n3.Manager (not for public using!)"
         "\n-->> ";
     int choise{};
-
-    Employee workerTemp;
     cin >> choise;
     cin.ignore();
     cin.clear();
@@ -44,7 +41,7 @@ int main()
     case 2:
     {
         cout << "\nIn case 2: ";
-
+        Employee workerTemp;
         workerTemp = getEmployeeInfo();
         writeEmployeeInfo(workerTemp);
         printEmployeeInfo();

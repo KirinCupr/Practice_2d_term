@@ -4,7 +4,6 @@
 #include <fstream>
 #include "Employer.h"
 
-
 Employer getEmployerInfo();
 void writeEmployerInfo(Employer _employer);
 void printEmployerInfo();
