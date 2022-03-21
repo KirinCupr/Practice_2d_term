@@ -56,14 +56,15 @@ void printEmployerInfo()
     ifstream outputFrom("employersList.txt", ios::in | ios::binary);
     if (!outputFrom.is_open()) cout << "Error! There are something wrong with file";
     outputFrom.seekg(0, ios_base::beg);
-    while (!outputFrom.eof())
+    while (true)
     {
         getline (outputFrom, _employer.title, '\t');
         getline (outputFrom, _employer.activityType, '\t');
         getline (outputFrom, _employer.address, '\t');
         getline (outputFrom, _employer.phoneNumber, '\t');
         getline (outputFrom, _employer.vacancy, '\n');
-
+        
+        if (outputFrom.eof()) break;
         cout << _employer.title << '\t' << _employer.activityType << '\t'
              << _employer.address << '\t' << _employer.phoneNumber << '\t'
              << _employer.vacancy << endl;
