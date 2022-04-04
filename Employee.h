@@ -8,7 +8,7 @@ struct Employee
     string surname;
     string name;
     string patronymic;
-    string qualificationLevel;
+    string qualification;
     string profession;
 };
 
